@@ -1,0 +1,32 @@
+<template>
+    <div class="slds-col slds-size_6-of-6">
+        <div class="slds-scrollable_y" style="height:22rem;width:24rem">
+            <ul class="slds-m-around_medium">
+                <template for:each={items} for:item="item">
+                    <li key={item.id}>
+                        <template if:true={item.id}>
+                            <lightning-card  variant="Narrow" >
+                                    <lightning-button-menu alternative-text="Show menu" menu-alignment="right" slot="actions">
+                                        <lightning-menu-item prefix-icon-name="action:delete" value="delete" data-fav-item={item.id} label="Delete" onclick={handleMenuItemSelect}></lightning-menu-item>
+                                        <lightning-menu-item prefix-icon-name="action:edit" value="edit" data-fav-item={item.id} label="Edit" onclick={handleMenuItemSelect}></lightning-menu-item>
+                                    </lightning-button-menu>
+                                <a href={item.url} slot="title" target="_blank">{item.title}</a>
+                                <div class="pills-margin-negative-top pills-margin-left">
+                                    <template for:each={item.tags} for:item="tag">
+                                        <span key={tag} class="slds-pill slds-pill_link">
+                                            <a class="slds-pill__action" title="Tag" onclick={handleTagClick} data-ctag={tag}
+                                                style="padding-right: 0.3em;">
+                                                <span class="slds-pill__label" data-ctag={tag}>{tag}</span>
+                                            </a>
+                                        </span>
+                                    <!--  <lightning-pill class="between-pills-margin" label={tag} onremove={handleRemove} onclick={handleClick}></lightning-pill> -->
+                                    </template>
+                                </div>
+                            </lightning-card>
+                        </template>
+                    </li>
+                </template>
+            </ul>
+        </div>
+    </div>
+</template>

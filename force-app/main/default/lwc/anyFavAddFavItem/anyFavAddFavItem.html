@@ -1,0 +1,41 @@
+<template>
+    <div class="slds-grid slds-wrap">
+        <div class="slds-col slds-size_12-of-12">
+            <div class="slds-p-around_medium lgc-bg">
+                <lightning-input type="text" label="Enter title" value={favItem.title} onchange={handleTitleChange}></lightning-input>
+                <div class="slds-p-top_large">
+                    <!-- <lightning-input type="text" label="Enter tags" value="sample"  field-level-help="Enter comma saperated taxts for multiple tags or enter one by one and press enter"></lightning-input> -->
+                    <div class="slds-form-element">
+                        <label class="slds-form-element__label" for="text-input-id-1">Enter Tags</label>
+                        <div class="slds-form-element__control">
+                            <input type="text" id="text-input-id-1" value={tags} placeholder="write tag and press enter" class="slds-input" onkeypress={handleTagsEnter}/>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-p-top_medium">
+                    <template if:true={tagPills}>
+                        <template for:each={tagPills} for:item="item" for:index="index">
+                            <lightning-pill key={item.index} label={item.label} data-pill-id={item.index} onremove={handleRemoveTag}></lightning-pill>
+                        </template>
+                    </template>
+                </div>
+                
+            </div>
+        </div>            
+    </div>
+    <div class="slds-grid slds-wrap">
+        <div class="slds-col slds-size_2-of-12">
+            <span></span>
+        </div>
+        <div class="slds-col slds-size_4-of-12">
+            <lightning-button variant="destructive" label="Cancel" title="Cancel add item" onclick={handleCancelClick} class="slds-m-left_x-small"></lightning-button>
+        </div>
+        <div class="slds-col slds-size_4-of-12">
+            <lightning-button variant="brand" label="Save" title="Primary action" onclick={handleAddItemClick} class="slds-m-left_x-small"></lightning-button>
+            
+        </div>
+        <div class="slds-col slds-size_2-of-12">
+            <span></span>
+        </div>
+    </div>
+</template>

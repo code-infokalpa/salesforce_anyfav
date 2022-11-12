@@ -1,0 +1,31 @@
+<template>
+    <template if:true={visibilityState.showItemsList}>
+        <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_1-of-12">
+                <span></span>
+            </div> 
+            <div class="slds-col slds-size_7-of-12">
+                <div>
+                    <lightning-input name="enter-search" label="Search Favourite Items" type="search" onchange={handleChange} value={searchWord}>
+                    </lightning-input>
+                </div>
+            </div>
+            <div class="slds-col slds-size_1-of-12">
+                <span></span>
+            </div> 
+            <div class="slds-col slds-size_3-of-12 add-button-top-padding">
+                <lightning-button label="Add" title="Add action" icon-name="action:new" class="slds-m-left_x-small" onclick={handleAddItem}></lightning-button>
+            </div>
+            
+            <template if:true={items}>
+                <c-any-fav-list-fav-items items={items} onitemaction={handleActionItem} ontagitemclick={handleTagItemClick}></c-any-fav-list-fav-items>
+            </template>
+
+
+        </div>
+    </template>
+    <template if:true={visibilityState.showAddForm}>
+        <c-any-fav-add-fav-item onadditembutton={handleAddItemButton} item={favItem}></c-any-fav-add-fav-item>
+    </template>
+
+</template>
