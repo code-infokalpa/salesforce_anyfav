@@ -9,6 +9,8 @@ Below example shows adding a setting page URL to favourite:-
 
 ## Searching and launching stored URL
 ![](/assets/searching_favourite_by_tag.gif)
+
+if you want to search entry matching multiptle tags use '#'. Ex. #account,#home
 ## Edit and Delete stored URLs
 ![](/assets/edit_favourite_item.gif)
 
