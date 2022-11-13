@@ -59,7 +59,7 @@ Utils.getTags = (tagsStr) => {
 }
 
 Utils.getMatchingItemFromItems = (iId, items) => {
-    console.log('test-- ', iId,items);
+    //console.log('test-- ', iId,items);
     let retItm;
     for(let itm of items){
         if(itm.id !== undefined && itm.id === iId){
@@ -137,7 +137,7 @@ Utils.saveItem = (payload) => {
         saveFavItem({inStr : JSON.stringify(payload)})
         .then(result => {
             if(result.status === 'success'){
-                console.log('saved!');
+                //console.log('saved!');
                 resolve(result);
             }
             else{
@@ -157,7 +157,7 @@ Utils.deleteFavItem = (itmId) => {
         deleteItem({inStr : itmId})
         .then(result => {
             if(result.status === 'success'){
-                console.log('deleted!');
+                //console.log('deleted!');
                 resolve(result);
             }
             else{

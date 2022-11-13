@@ -10,7 +10,7 @@ export default class AnyFavListFavItems extends LightningElement {
         let selectedItemValue = evt.target.value;
         if(selectedItemValue === 'delete'){
             Utils.deleteFavItem(evt.target.dataset.favItem).then(rslt => {
-                console.log('success');
+                //console.log('success');
                 //Utils.showSuccessToast('Success', 'URL saved as Favourite');
                 //this.fireEvent('','done');
                 const evt = new ShowToastEvent({

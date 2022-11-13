@@ -14,7 +14,7 @@ export default class AnyFavApp extends LightningElement {
     favItem;
 
     connectedCallback(){
-        console.log("hello!",location)
+        //console.log("hello!",location)
         this.visibilityState = {showItemsList : true, showAddForm: false};
     }
 
@@ -32,7 +32,7 @@ export default class AnyFavApp extends LightningElement {
     } 
     handleChange(evt){
         this.searchWord = evt.target.value;
-        console.log('search terms: ',  this.searchWord);
+        //console.log('search terms: ',  this.searchWord);
         if(this.searchWord.startsWith('#')){
             this.items = Utils.searchByTags(this.originalItems, this.searchWord);
         }
@@ -40,7 +40,7 @@ export default class AnyFavApp extends LightningElement {
             this.items = Utils.search(this.originalItems, this.searchWord);
         }
         
-        console.log('items--- ', this.items);
+        //console.log('items--- ', this.items);
     }   
 
     handleAddItem(evt){

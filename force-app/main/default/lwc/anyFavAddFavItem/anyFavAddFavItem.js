@@ -56,7 +56,7 @@ export default class AnyFavAddFavItem extends LightningElement {
         prepPayload[Utils.getSaveItemMapping.url] = Utils.getCurrentURL();
         prepPayload[Utils.getSaveItemMapping.tags] = Utils.getKeysString(this.tagPills);
         Utils.saveItem(prepPayload).then(rslt => {
-            console.log('success',JSON.stringify(prepPayload),rslt);
+            //console.log('success',JSON.stringify(prepPayload),rslt);
             //Utils.showSuccessToast('Success', 'URL saved as Favourite');
             this.fireEvent('', 'done');
             const evt = new ShowToastEvent({
